@@ -1,0 +1,62 @@
+<h1>二日酔いの対策</h1>
+<h3>一覧ページ</h3>
+
+<h3>投稿を検索</h3>
+<%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索する'  %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_post_path %>
+<div class="posts-container">
+  <% @posts.each do |t| %>
+    <div class="post">
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <%= t.user.email %>
+      <%= t.way %>
+      <%= t.time %>
+      <%= t.image %>
+      <% if user_signed_in? %>
+      <% if current_user.already_liked?(t) %>
+          <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              <p>いいねを取り消す</p><%= t.likes.count %>
+          <% end %>
+      <% else %>
+          <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+              <p>いいね</p><%= t.likes.count %>
+          <% end %>
+      <% end %>
+  <% else %>
+      <p>いいねの数 = </p><%= t.likes.count %>
+  <% end %>
+      <%= link_to "詳細へ", post_path(t.id) %>
+      <%= link_to "編集する", edit_post_path(t.id) %>
+      <%= button_to "削除する", post_path(t.id), method: :delete %>
+    </div>
+  <% end %>
+
+</div>
+
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+    <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+        <meta charset="utf-8">
+        <title>二日酔い診断スタート</title><!--ブラウザのタブのタイトルを指定-->
+    </head>
+
+    <body>
+        <header>
+            <h1 class="headline">
+            <a>Perfu_me</a>
+            </h1>
+            <ul class="nav-list">
+                <li class="nav-list-item">about fragrance</li>
+                <li class="nav-list-item"><%= link_to "診断", perfumes_path, class: "link" %></li>
+            </ul>
+        </header>
+
+        <div class="start">
+            <h6>Are you ready?</h6>
+            <%= link_to "診断を始める", new_perfume_path, class: "link" %>
+        </div>
+    </body>

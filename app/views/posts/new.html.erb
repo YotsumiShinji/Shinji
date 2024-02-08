@@ -1,0 +1,32 @@
+<h1>(二日酔いの対策)</h1>
+<h3>新規投稿ページ</h3>
+<%= form_for @post do |f| %>
+
+    <div class="field">
+     <%= f.label :方法  %>
+     <%= f.text_area :way, :size => "30x2" %>
+    </div>
+
+    <div class="field">
+     <%= f.label :タイミング  %>
+     <%= f.select :time,
+     [["飲む前", "飲む前"],
+     ["飲んでいる時", "飲んでいる時"],
+     ["飲んだ後", "飲んだ後"]], include_blank: "選択して下さい" %>
+    </div>
+
+    <div class="field">
+     <%= f.label :画像 %>
+     <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+     <%= f.label :content,"内容" %>
+     <%= f.select :category, [["薬"], ["食べ物"], ["注意"]], include_blank: "どの投稿？" %>
+    </div>
+
+
+    <%= f.submit "投稿する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path %>
