@@ -1,0 +1,21 @@
+databases:
+  - name: Futsukayoi Taisaku
+    databaseName: futsukayoi_taisaku
+    user: Futsukayoi Taisaku
+    region: singapore
+
+services:
+  - type: web
+    name: Futsukayoi Taisaku
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: postgres://futsukayoi_taisaku_user:0qT57R2IQVmkrp2JDYuVPco0btzHjSQN@dpg-cn2c8mol5elc73eba01g-a/futsukayoi_taisaku
+        fromDatabase:
+          name: Futsukayoi Taisaku
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
