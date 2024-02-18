@@ -1,49 +1,41 @@
-* {
-    margin: 0;
-    padding: 0;
-  } 
- 
- 
-  .post-main{
-    display: flex;
-  }
-
-  .post-right{
-    width: 700px;
-  }
-
-  .way{
+.field-1{
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
     border: solid 3px ;
-  }
-
-  .time{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px ;
-  }
-
-  .image{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px ;
-  }
-
-  .category{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px ;
-  }
-
-  .iine{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px;
     background-color: azure;
   }
+
+.field-2{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px ;
+    background-color: azure;
+}
+
+.field-3{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px ;
+    text-align: center;
+    background-color: azure;
+}
+
+.field-4{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px ;
+    text-align: center;
+    background-color: azure;
+}
+
+.field-5{
+    text-align: center;
+}
+
+.field-6{
+    text-align: center;
+}

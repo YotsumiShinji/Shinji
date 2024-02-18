@@ -1,4 +1,14 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>診断開始</title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="./stylesheets/perfumes.css">
+  </head>
+
+<div class="body-1">
 <%= form_for(@perfume, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="body">
     <div class="perfume-container">
         <div class="col-12">
             <p>Q1. 吐き気</p>
@@ -31,5 +41,6 @@
     </div>
     <div class="sindanbotan">
         <%= f.submit " 結果 " %>
+    </div>
     </div>
 <% end %>

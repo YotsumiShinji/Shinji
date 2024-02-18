@@ -1,9 +1,27 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>編集</title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="./stylesheets/edit.css">
+  </head>
+
 <%= form_for @post do |f| %>
-    <%= f.label :way  %>
-    <%= f.text_field :way,  :size => 140 %> 
-    <%= f.label :time  %>
-    <%= f.text_field :time,  :size => 140 %> 
-    <%= f.label :image  %>
+
+  <div class="field-1">
+    <%= f.label :方法  %>
+    <%= f.text_field :way,  :size => 140 %>
+  </div>
+  
+  <div class="field-2">
+    <%= f.label :時間  %>
+    <%= f.text_field :time,  :size => 140 %>
+  </div>
+    
+  <div class="field-3>"
+    <%= f.label :画像  %>
     <%= f.text_field :image,  :size => 140 %> 
+  </div>
+
     <%= f.submit "編集する" %>
   <% end %>

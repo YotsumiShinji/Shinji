@@ -1,8 +1,17 @@
-<div class="intoro">
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>診断結果</title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="./stylesheets/result.css">
+  </head>
+
+<div class="body-2">
+ <div class="intoro">
   <h5>診断結果</h5>
   <p>最適な対処法は…</p>
-</div>
-<div class="perfume-container">
+ </div>
+ <div class="perfume-container">
   <% case [@perfume.question1, @perfume.question2, @perfume.question3] %>
   <% when ["1", "1", "1"] %>
     <h6>胃薬を飲み、水分補給をしっかり行いながら、安静にする。</h6>
@@ -29,4 +38,5 @@
   <% when ["2", "2", "2"] %>
     <h6>時間が解決！</h6>
   <% end %>
+ </div>
 </div>

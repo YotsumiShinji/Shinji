@@ -8,35 +8,42 @@
 
 <h1>Post詳細</h1>
 <div class="post">
+<div class="post-main">
+<div class="post-right">
   <div class="way">
-  <p><%= @post.way %></p>
+  <p1><%= @post.way %></p1>
   </div>
   <div class="time">
-  <p><%= @post.time %></p>
-  </div>
-  <div class="image">
-  <p><%= @post.image %></p>
+  <p1><%= @post.time %></p1>
   </div>
   <div class="category">
-  <p><%= @post.category %></p>
+  <p1><%= @post.category %></p1>
   </div>
-  <p><%= @post.created_at %></p>
+</div>
+<div class="post-left">
+  <div class="image">
+  <p1><%= @post.image %></p1>
+  </div>
+</div>
+</div>
+  <p1><%= @post.created_at %></p1>
     <% if user_signed_in? %>
       <% if current_user.already_liked?(@post) %>
         <%= button_to post_like_path(@post), method: :delete do %>
-          <p>いいねを取り消す</p><%= @post.likes.count %>
+          <p1>いいねを取り消す</p1><%= @post.likes.count %>
         <% end %>
       <% else %>
         <%= button_to post_likes_path(@post), method: :post do %>
-          <p>いいね</p><%= @post.likes.count %>
+          <p1>いいね</p1><%= @post.likes.count %>
         <% end %>
       <% end %>
     <% else %>
-      <p>いいねの数 = </p><%= @post.likes.count %>
+      <p1>いいねの数 = </p1><%= @post.likes.count %>
     <% end %>
   <%= link_to "編集する", edit_post_path(@post.id) %>
 </div>
 
+<div class="iine">
 <h2>いいねしたユーザー</h2>
 <% @post.liked_users.each do |user| %>
   <li><%= user.email %></li>
@@ -61,6 +68,7 @@
       <% end %>
     <% end %>
   <% end %>
+</div>
 </div>
 
 <%= link_to "Post一覧に戻る", posts_path %>

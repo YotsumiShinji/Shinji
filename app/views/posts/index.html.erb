@@ -9,6 +9,7 @@
 <body>
 <section id="first-block">
   <div class="title-container">
+  <h12>楽しいお酒Lifeを</h12>
   </div>
 </section>
 
@@ -20,7 +21,6 @@
     <div class="post">
       <div top-block>
         <%= image_tag t.image_url, size: "250x200" if t.image? %>
-        <%= t.image %>
       </div>
       <div center-block>
         <div user-email>
@@ -37,15 +37,15 @@
         <% if user_signed_in? %>
         <% if current_user.already_liked?(t) %>
           <%= button_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-              <p>いいねを取り消す</p><%= t.likes.count %>
+              <p1>いいねを取り消す</p1><%= t.likes.count %>
           <% end %>
         <% else %>
           <%= button_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-              <p>いいね</p><%= t.likes.count %>
+              <p1>いいね</p1><%= t.likes.count %>
           <% end %>
         <% end %>
         <% else %>
-          <p>いいねの数 = </p><%= t.likes.count %>
+          <p1>いいねの数 = </p1><%= t.likes.count %>
         <% end %>
         <%= link_to "詳細へ", post_path(t.id) %>
         <%= link_to "編集する", edit_post_path(t.id) %>
@@ -57,7 +57,9 @@
 </div>
 
 <div class="start">
-<h3>対処法診断</h3>
+<h2>対処法診断</h2>
+<h2>二日酔になってしまったあなた！</h2>
+<h2>症状から最善の解消法をご提案！</h2>
 <a href="#" class="btn-sticky">
 <%= link_to "診断を始める", new_perfume_path, class: "link" %>
 </a>

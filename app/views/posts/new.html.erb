@@ -1,13 +1,23 @@
-<h1>(二日酔いの対策)</h1>
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>新規投稿ページ</title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="./stylesheets/new.css">
+  </head>
+
+<body>
+  
+<h1>二日酔いの対策</h1>
 <h3>新規投稿ページ</h3>
 <%= form_for @post do |f| %>
 
-    <div class="field">
+    <div class="field-1">
      <%= f.label :方法  %>
      <%= f.text_area :way, :size => "30x2" %>
     </div>
 
-    <div class="field">
+    <div class="field-2">
      <%= f.label :タイミング  %>
      <%= f.select :time,
      [["飲む前", "飲む前"],
@@ -15,18 +25,23 @@
      ["飲んだ後", "飲んだ後"]], include_blank: "選択して下さい" %>
     </div>
 
-    <div class="field">
+    <div class="field-3">
      <%= f.label :画像 %>
      <%= f.file_field :image %>
     </div>
 
-    <div class="field">
+    <div class="field-4">
      <%= f.label :content,"内容" %>
      <%= f.select :category, [["薬"], ["食べ物"], ["注意"]], include_blank: "どの投稿？" %>
     </div>
 
-
-    <%= f.submit "投稿する" %>
+    <div class="field-5">
+     <%= f.submit "投稿する" %>
+    </div>
 <% end %>
 
-<%= link_to "一覧に戻る", posts_path %>
+    <div class="field-6">
+     <%= link_to "一覧に戻る", posts_path %>
+    </div>
+
+</body>
