@@ -1,4 +1,15 @@
-<h2>Sign up</h2>
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title>詳細ページ</title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="./stylesheets/sign-up.css">
+  </head>
+
+<body>
+<div class="top">
+  <h2>Sign up</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
@@ -27,3 +38,4 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</body>

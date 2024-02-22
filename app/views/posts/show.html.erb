@@ -9,7 +9,6 @@
 <h1>Post詳細</h1>
 <div class="post">
 <div class="post-main">
-<div class="post-right">
   <div class="way">
   <p1><%= @post.way %></p1>
   </div>
@@ -19,12 +18,6 @@
   <div class="category">
   <p1><%= @post.category %></p1>
   </div>
-</div>
-<div class="post-left">
-  <div class="image">
-  <p1><%= @post.image %></p1>
-  </div>
-</div>
 </div>
   <p1><%= @post.created_at %></p1>
     <% if user_signed_in? %>

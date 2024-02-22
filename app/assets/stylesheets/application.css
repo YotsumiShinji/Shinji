@@ -18,9 +18,9 @@
     margin: 0;
   }
   body {
-    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
-      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-family:serif;
   }
+  
   header {
     background-color: black;
     height: 80px;

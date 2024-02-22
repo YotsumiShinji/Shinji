@@ -18,10 +18,11 @@
     <%= f.text_field :time,  :size => 140 %>
   </div>
     
-  <div class="field-3>"
-    <%= f.label :画像  %>
-    <%= f.text_field :image,  :size => 140 %> 
+  <div class="field-3">
+    <%= f.label :content,"内容" %>
+    <%= f.select :category, [["薬"], ["食べ物"], ["注意"]], include_blank: "どの投稿？" %>
   </div>
+    
 
     <%= f.submit "編集する" %>
   <% end %>
